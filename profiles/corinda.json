@@ -1,0 +1,48 @@
+{
+  "$comment": "Example book profile: rules only, no book content. Tuned for the Corinda 'Thirteen Steps to Mentalism' scan (two-up spreads, title pages on the right half of the opening spread, one repeated scan page, characteristic OCR glyph confusions).",
+
+  "assemble": {
+    "replacements": [
+      { "from": "\\bjs\\b", "to": "is" },
+      { "from": "\\b1s\\b", "to": "is" },
+      { "from": "\\b<ay\\b", "to": "say" },
+      { "from": "\\b1 (am|have|had|will|would|was|think|know|don['’]t|do|can|cannot|could|understand|maintain|feel|believe|found|find|saw|shall|should|may|might|must|want|wish|say|said|told|use|used|prefer|consider|spent|decided|write|wrote|ask|asked|gave|get|got|never|always|like)\\b", "flags": "g", "to": "I $1" }
+    ],
+    "titlePages": [1, 13, 28, 41, 63, 81, 99, 117, 136, 151, 167, 181, 193],
+    "duplicatePages": { "194": 193 }
+  },
+
+  "chapters": [
+    { "title": "Step One — The Swami Gimmick", "scan": 1, "titleSide": "R" },
+    { "title": "Step Two — Pencil, Lip, Sound, Touch and Muscle Reading", "scan": 13, "titleSide": "R" },
+    { "title": "Step Three — Mnemonics and Mental Systems", "scan": 28, "titleSide": "R" },
+    { "title": "Step Four — Predictions", "scan": 41, "titleSide": "R" },
+    { "title": "Step Five — Blindfolds", "scan": 63, "titleSide": "R" },
+    { "title": "Step Six — Billets", "scan": 81, "titleSide": "R" },
+    { "title": "Step Seven — Book Tests and the Fogel Interview", "scan": 99, "titleSide": "R" },
+    { "title": "Step Eight — Two-Person Telepathy", "scan": 117, "titleSide": "R" },
+    { "title": "Step Nine — Mediumistic Stunts", "scan": 136, "titleSide": "R" },
+    { "title": "Step Ten — Card Tricks", "scan": 151, "titleSide": "R" },
+    { "title": "Step Eleven — Question and Answer (Readings)", "scan": 167, "titleSide": "R" },
+    { "title": "Step Twelve — Publicity Stunts", "scan": 181, "titleSide": "R" },
+    { "title": "Step Thirteen — Patter and Presentation", "scan": 193, "titleSide": "R" }
+  ],
+
+  "chapterize": {
+    "junkText": [
+      "^CORINDA\\.?$",
+      "^STEP (ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|ELEVEN|TWELVE|THIRTEEN)$",
+      "^STEP\\s+\\w+\\s+in\\s+CORINDA",
+      "^IN CORINDA['’]S SERIES\\s*[:—]?$",
+      "^[“\"«']?\\s*THIRTEEN STEPS TO MENTALISM\\s*[”\"»']?\\.?$",
+      "^TANNEN MAGIC INC\\.?",
+      "^1540 Broadway",
+      "^COPYRIGHT FULLY RESERVED$",
+      "^Printed in England by",
+      "^Published by$",
+      "^No part of this Publication",
+      "^This scan page is identical",
+      "^CONTENTS$"
+    ]
+  }
+}

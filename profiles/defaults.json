@@ -1,0 +1,81 @@
+{
+  "raster": { "dpi": 150, "format": "jpeg" },
+  "detect": {
+    "spreadAspect": 1.2,
+    "spreadWidthRatio": 0.8,
+    "textLayerSamplePages": 10,
+    "textLayerMinChars": 400
+  },
+  "ocr": { "lang": "eng", "workers": 6 },
+  "geometry": {
+    "inkThreshold": 150,
+    "marginTrim": 0.02,
+    "contentInkRatio": 0.004,
+    "gutterBand": 0.12,
+    "gutterSmooth": 7
+  },
+  "figures": {
+    "inkThreshold": 150,
+    "cell": 8,
+    "minInkDensity": 0.05,
+    "shadowBrightness": 175,
+    "wordMinConf": 65,
+    "wordPadX": 3,
+    "wordPadTop": 2,
+    "wordPadBottom": 3,
+    "edgeCells": 2,
+    "mergeGap1": 34,
+    "mergeGap2": 60,
+    "cropPadX": 6,
+    "cropPadY": 4,
+    "minW": 40,
+    "minH": 34,
+    "minCells": 14,
+    "minArea": 2600,
+    "maxUpScale": 2,
+    "maxWidthPx": 1900,
+    "minWFinal": 55,
+    "minHFinal": 45,
+    "minAreaFinal": 4500
+  },
+  "assemble": {
+    "conf": {
+      "topStripY": 26, "topStripConf": 78, "topStripMaxLen": 60,
+      "lowConf": 50, "lowConfAlnumRatio": 0.75,
+      "veryLowConf": 36, "junkWordConf": 85, "edgeWordConf": 70,
+      "columnKeepConf": 92, "columnKeepAlnum": 2, "columnKeepRatio": 0.85,
+      "titlePageMinConf": 65, "titlePageCoverConf": 20,
+      "folioMinConf": 70, "folioDetachedConf": 45,
+      "halfTrimConf": 60, "halfTrimLineConf": 70,
+      "tocWordDropConf": 25
+    },
+    "noise": { "minAlnumRatio": 0.3, "maxAlnumForRatio": 3, "shortWordMaxConf": 85 },
+    "columns": { "minLines": 10, "binWidth": 12, "minGapFactor": 2.6, "minGapAbs": 16, "bandLo": 0.28, "bandHi": 0.75, "minVotesFactor": 0.3, "minVotes": 6 },
+    "layoutLine": { "pxPerChar": 5.2, "maxIndent": 24, "maxSpaces": 10 },
+    "figureFilter": { "tableMaxArea": 30000, "tableDigitRatio": 0.3, "tableMinWords": 3, "textFragMaxArea": 26000, "textFragMinWords": 6, "captionBelow": 120, "captionAbove": 60 },
+    "folioOwnVotes": 5,
+    "folioNeighbors": 3,
+    "titleMergeY": 30,
+    "titleMergeOverlap": 14
+  },
+  "chapterize": {
+    "mode": "heuristic",
+    "chapterPatterns": ["^(CHAPTER|PART|SECTION|STEP|BOOK)\\s+[0-9IVXLC]+\\b", "^(CHAPTER|PART|SECTION|STEP|BOOK)\\s+(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|ELEVEN|TWELVE|THIRTEEN|FOURTEEN|FIFTEEN)\\b"],
+    "stripOpeningFenceLimit": 12,
+    "runningHeadMaxLen": 140,
+    "runningHeadMinLetters": 8,
+    "runningHeadMinCaps": 0.5,
+    "shortParaKeep": 60,
+    "epigraphKeep": 40,
+    "join": { "shortHeadingLen": 70, "capsLen": 120, "capsRatio": 0.65 },
+    "tocLikeMaxLen": 400
+  },
+  "epub": {
+    "language": "en",
+    "publisher": "",
+    "css": {
+      "bodyIndent": "1.2em",
+      "headingPageBreak": true
+    }
+  }
+}
