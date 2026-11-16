@@ -1,0 +1,23 @@
+{
+  "name": "pdf2epub",
+  "version": "1.0.0",
+  "description": "Convert scanned or text-layer PDFs into structured EPUBs: rasterize, OCR, gutter geometry, figure crops, text assembly, cleaning, chapterization, EPUB packaging and validation.",
+  "license": "GPL-3.0-only",
+  "bin": {
+    "pdf2epub": "bin/pdf2epub.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/",
+    "setup": "bash setup.sh"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.14",
+    "archiver": "^7.0.1",
+    "commander": "^12.1.0",
+    "sharp": "^0.33.5",
+    "tesseract.js": "^5.1.1"
+  }
+}
