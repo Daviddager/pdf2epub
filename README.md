@@ -1,11 +1,17 @@
 # pdf2epub
 
-Convert any PDF into a structured, navigable EPUB — scanned books (via OCR) and
-PDFs with a text layer alike.
+Turn a **scanned book** into a clean, chapterized, validated EPUB — reproducibly,
+locally, in one command.
 
-The pipeline grew out of a real conversion of a scanned magic book (two-page
-spreads, gutter shadows, missing/repeated scans, misprinted folios); every stage
-below is battle-tested code, not a sketch.
+pdf2epub was built for the hard case that generic converters give up on: book
+scans with two-page spreads, gutter shadows, running heads, missing or repeated
+scans, and misprinted folios. It OCRs the scan, splits spreads, strips page
+furniture, splits chapters (via a per-book profile), and packages a validated
+EPUB — then tells you how faithful the result is. PDFs with a text layer skip
+OCR and go straight through the same pipeline.
+
+Every stage grew out of a real conversion of a scanned book and is battle-tested
+code, not a sketch.
 
 ```
 PDF ──rasterize──▶ page images ──geometry──▶ content box + gutter per page
@@ -290,6 +296,31 @@ npm test        # generates a synthetic 3-page PDF (no book content) and runs
 - **Junk figure crops** → tune `figures.min*` / `assemble.figureFilter.*`.
 - **Re-running**: use `--from <stage> --resume`; the OCR cache is per page, so
   re-runs are cheap.
+
+## Alternatives — when to use what
+
+pdf2epub is deliberately niche. If your situation matches one of these, another
+tool may serve you better:
+
+- **Text-layer PDF you just want readable** → [Calibre](https://calibre-ebook.com/)
+  (`ebook-convert book.pdf out.epub`) is one command and fine for most
+  born-digital PDFs. pdf2epub also handles these, but its edge is not here.
+- **You want an OCR layer *inside* the PDF, not an EPUB** →
+  [OCRmyPDF](https://ocrmypdf.readthedocs.io/) is excellent and battle-tested.
+- **Arbitrary documents — papers, reports, tables, multi-column layouts** →
+  ML-based extractors like [Marker](https://github.com/datalab-to/marker),
+  [MinerU](https://github.com/opendatalab/MinerU), or
+  [Docling](https://github.com/docling-project/docling) have the best general
+  structure understanding available, and are the right choice when the input
+  isn't a chaptered book. They output Markdown, not a packaged EPUB.
+- **You have a scanned *book* and want a clean chapterized EPUB with
+  verification** → that's this tool. Spread splitting, gutter handling, junk
+  (running heads/imprints) removal, per-book profiles, folio calibration, and a
+  validation suite on the final artifact are not things the above do out of
+  the box.
+
+If you use a different tool and it works, great — pdf2epub exists for the runs
+where those tools produce garbage.
 
 ## Honest limits
 
