@@ -7,7 +7,7 @@
     "pdf2epub": "bin/pdf2epub.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "test": "node --test tests/*.test.js",

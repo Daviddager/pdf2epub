@@ -38,7 +38,7 @@ PDF ──rasterize──▶ page images ──geometry──▶ content box + g
 
 ## Requirements
 
-- Node ≥ 18, npm
+- Node ≥ 20 (supported LTS lines; CI tests the suite on Node 22 and 24)
 - poppler-utils (`pdftoppm`, `pdftotext`, `pdfinfo`)
 - For scanned books: nothing else — OCR is bundled (tesseract.js)
 
