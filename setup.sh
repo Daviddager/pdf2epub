@@ -16,7 +16,7 @@ need node    "node --version" nodejs
 need pdftoppm "pdftoppm -v"   poppler-utils
 need pdftotext "pdftotext -v" poppler-utils
 
-node -e 'const [maj]=process.versions.node.split("."); if(+maj<18){console.log("node >=18 required");process.exit(1)}'
+node -e 'const [maj]=process.versions.node.split("."); if(+maj<20){console.log("node >=20 required (LTS lines tested in CI: 22, 24)");process.exit(1)}'
 
 echo "installing npm dependencies..."
 npm install
