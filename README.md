@@ -1,5 +1,8 @@
 # pdf2epub
 
+[![test](https://github.com/Daviddager/pdf2epub/actions/workflows/test.yml/badge.svg)](https://github.com/Daviddager/pdf2epub/actions/workflows/test.yml)
+[![License: GPL v3](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](LICENSE)
+
 Turn a **scanned book** into a clean, chapterized, validated EPUB — reproducibly,
 locally, in one command.
 
